@@ -1,0 +1,8 @@
+com\online\electronic\shopping\util\HibernateUtil.class
+com\online\electronic\shopping\sellerapi\SellerAPI.class
+com\online\electronic\shopping\model\Product.class
+com\online\electronic\shopping\buyer\BuyerAPI.class
+com\online\electronic\shopping\dao\SellerDao.class
+com\online\electronic\shopping\builder\ProductGsonBuilder.class
+com\online\electronic\shopping\dao\BuyerDao.class
+com\online\electronic\shopping\serializer\ProductSerializer.class

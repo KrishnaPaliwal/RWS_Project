@@ -1,0 +1,158 @@
+war file name : shopping-apis.war
+
+								Seller APIs
+								===========
+								============
+
+Create product :
+=======================
+POST : http://localhost:8080/shopping-apis/seller/addprod
+Consume :application/xml
+Payload :
+<product>
+    <id></id>
+    <category>Electronics</category>
+    <price>50000</price>
+    <productName>Samsung Mobile</productName>
+    <remark>Available only in India</remark>
+    <stokeNumber>2500</stokeNumber>
+</product>
+
+Get the product Details for Id :
+==================================
+GET : http://localhost:8080/shopping-apis/seller/getprod/{Product_id}/
+
+Produce : application/xml
+
+Output :
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <category>Electronics</category>
+    <id>10</id>
+    <price>50000</price>
+    <productName>Samsung Mobile</productName>
+    <remark>Available only in India</remark>
+    <stokeNumber>2500</stokeNumber>
+</product>
+
+Update product details :
+PUT :http://localhost:8080/shopping-apis/seller/updateprod/{Product_id}/
+Consume :application/xml
+Payload :
+<product>
+    <id></id>
+    <category>Electronics</category>
+    <price>50000</price>
+    <productName>Samsung Mobile NEW</productName>
+    <remark>Available only in India</remark>
+    <stokeNumber>2500</stokeNumber>
+</product>
+
+Delete product :
+DELETE : http://localhost:8080/shopping-apis/seller/deleteprod?id={Product_id}
+
+
+							Buyer APIs
+							===========
+							===========
+
+Get Products By Category
+=========================
+
+GET : http://localhost:8080/shopping-apis/buyer/listprod?category=fsdfsdf
+
+Produces: application/json
+
+Authentication : Basic Authentication 
+username : username
+password : password
+
+Output :
+[
+    {
+        "product_id": 2,
+        "product_name": "krishna",
+        "category": "fsdfsdf",
+        "price": 12,
+        "stock_number": 1,
+        "remark": "rwer"
+    },
+    {
+        "product_id": 3,
+        "product_name": "kris34234herwna",
+        "category": "fsdfsdf",
+        "price": 1234423,
+        "stock_number": 1,
+        "remark": "rwer34242"
+    },
+    {
+        "product_id": 4,
+        "product_name": "WFWEFSF",
+        "category": "fsdfsdf",
+        "price": 2222,
+        "stock_number": 133,
+        "remark": "DSFDSFF"
+    },
+    {
+        "product_id": 6,
+        "product_name": "FFFFWFWEFSF",
+        "category": "fsdfsdf",
+        "price": 2222,
+        "stock_number": 122233,
+        "remark": "FFDSFDSFF"
+    }
+]
+
+Get Products By Price Range
+=============================
+
+GET :http://localhost:8080/shopping-apis/buyer/listprodbyrange?min=1&max=2229999
+
+Produces: application/json
+
+Output :
+
+[
+    {
+        "product_id": 2,
+        "product_name": "krishna",
+        "category": "fsdfsdf",
+        "price": 12,
+        "stock_number": 1,
+        "remark": "rwer"
+    },
+    {
+        "product_id": 3,
+        "product_name": "kris34234herwna",
+        "category": "fsdfsdf",
+        "price": 1234423,
+        "stock_number": 1,
+        "remark": "rwer34242"
+    },
+    {
+        "product_id": 4,
+        "product_name": "WFWEFSF",
+        "category": "fsdfsdf",
+        "price": 2222,
+        "stock_number": 133,
+        "remark": "DSFDSFF"
+    },
+    {
+        "product_id": 6,
+        "product_name": "FFFFWFWEFSF",
+        "category": "fsdfsdf",
+        "price": 2222,
+        "stock_number": 122233,
+        "remark": "FFDSFDSFF"
+    },
+    {
+        "product_id": 10,
+        "product_name": "Samsung Mobile",
+        "category": "Electronics",
+        "price": 50000,
+        "stock_number": 2500,
+        "remark": "Available only in India"
+    }
+]
+
+
